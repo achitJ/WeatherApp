@@ -15,6 +15,7 @@ app.get('', (req, res) => {
 */
 
 const app = express();
+const port = process.env.PORT || 3000; //if heroku port doesnt exit, we use 3000
 
 //paths for the config
 const publicDirPath = path.join(__dirname, '../public');
@@ -130,8 +131,8 @@ app.get('*', (req, res) => {
 });
 
 //3000 -> localhost port
-app.listen(3000, () => { //creates a server on given port
-    console.log("Server is running...");
+app.listen(port, () => { //creates a server on given port
+    console.log("Server is running on " + port);
 });
 
 //run on: http://localhost:3000/
