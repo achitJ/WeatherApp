@@ -25,8 +25,13 @@ const forecast = (longitude, latitude, callback) => {
                 temperature: body.current.temperature,
                 precipitation: body.current.precip,
                 feelsLike: body.current.feelslike,
-                location: `${body.location.name}, ${body.location.region}, ${body.location.country}`,
-                description: body.current.weather_descriptions[0]
+                description: body.current.weather_descriptions[0],
+                humidity: body.current.humidity,
+                visibility: body.current.visibility,
+                weatherImg: body.current.weather_icons[0],
+
+                localTime: body.location.localtime,
+                location: `${body.location.name}, ${body.location.region}, ${body.location.country}`
             });
         }
     });
